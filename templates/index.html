@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Emoji</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
+  </head>
+  <body style="font-family: 'Cinzel', serif" class="w-screen h-screen">
+    <div class="w-full flex flex-col justify-center items-center">
+        
+        <h1>Emoji thing!</h1>
+        <form class="bg-gray-50 p-8" method="POST">
+      <div class="mb-6">
+          <label
+          for="email"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Type something</label
+        >
+        <input
+        type="text"
+        id="prompt"
+        name="prompt"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        placeholder="eg. space"
+        required
+        />
+    </div>
+    <button
+    type="submit"
+    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+    >
+    Submit
+</button>
+</form>
+
+    <ul class=" flex flex-row gap-2 flex-wrap w-1/2">
+        {% for emoji in data %}
+        <li class="">{{ emoji }}</li>
+        {% endfor %}
+    </ul>
+    <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
+</div>
+  </body>
+  </html>
+  
