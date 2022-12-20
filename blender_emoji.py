@@ -5,25 +5,43 @@ import json
 
 
 def parse_csv(file_path):
+    # define output dict
     result = {}
+
+    # open file and read
     with open(file_path, mode="r") as f:
         reader = csv.reader(f)
+        
+        # iterate over rows
         for i, row in enumerate(reader):
+            
+            # skip header row
             if i < 1:
                 continue
+            
+            # get all useful data
             emoji = row[0]
             keywords = row[3].split("|")
             descriptions = row[2].split(" ")
+
+            # make lists even though these are 1 item
             categories = [row[4]]
             groups = [row[5]]
             subgroups = [row[6]]
+            
+            # concat all lists and deduplicate
             keys = set(keywords + descriptions + categories + groups + subgroups)
+            
+            # fill result dict
             for key in keys:
+                key = key.lower()
                 if key in result:
-                    key = key.lower()
+                    # append to existing list
                     result[key].append(emoji)
                 else:
+                    # create new list
                     result[key] = [emoji]
+            
     return result
 
 
