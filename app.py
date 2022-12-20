@@ -10,7 +10,7 @@ def home():
     output = ''
     if request.method == 'POST':
         json_data = load_from_json("emoji.json")
-        output = json_data.get(request.form['prompt'])
+        output = json_data.get(request.form['prompt'].lower())
         if output is None:
             output = ['Not found']
     return render_template("index.html", data=output)

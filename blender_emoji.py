@@ -20,6 +20,7 @@ def parse_csv(file_path):
             keys = set(keywords + descriptions + categories + groups + subgroups)
             for key in keys:
                 if key in result:
+                    key = key.lower()
                     result[key].append(emoji)
                 else:
                     result[key] = [emoji]
