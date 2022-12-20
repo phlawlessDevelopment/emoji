@@ -59,7 +59,22 @@ def load_from_json(file_path):
         return json.load(outfile)
 
 
-# json_data = load_from_json("emoji.json")
+json_data = load_from_json("emoji.json")
+
+
+'''
+this doesn't work yet, but it should be something like this
+'''
+
+input_gameobject = {} # todo: get this from blender , should be a single object
+output_gameobjects = [] # todo: get this from blender, should be a list of objects
+
+emojis = json_data.get(input_gameobject['input_prop'])
+
+if emojis is not None:
+    for i, emoji in enumerate(emojis):
+        output_gameobjects[i]['output_prop'] = emoji
+
 
 
 # while True:
