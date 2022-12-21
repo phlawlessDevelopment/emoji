@@ -1,0 +1,1 @@
+./antlr4.jar -Dlanguage=Python3 grammar/SongGrammar.g4 -visitor -o dist

@@ -16,7 +16,7 @@ public class SongGrammarParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, EMOJI=3, WS=4;
+		T__0=1, T__1=2, EMOJI=3;
 	public static final int
 		RULE_song = 0, RULE_phrase = 1, RULE_chunk = 2, RULE_pair = 3, RULE_triplet = 4;
 	private static String[] makeRuleNames() {
@@ -34,7 +34,7 @@ public class SongGrammarParser extends Parser {
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, "EMOJI", "WS"
+			null, null, null, "EMOJI"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -330,7 +330,7 @@ public class SongGrammarParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\6*\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\5*\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\6\2\16\n\2\r\2\16\2\17\3\2\3\2\3\3\3\3"+
 		"\5\3\26\n\3\6\3\30\n\3\r\3\16\3\31\3\3\5\3\35\n\3\3\4\3\4\5\4!\n\4\3\5"+
 		"\3\5\3\5\3\6\3\6\3\6\3\6\3\6\2\2\7\2\4\6\b\n\2\2\2)\2\r\3\2\2\2\4\27\3"+

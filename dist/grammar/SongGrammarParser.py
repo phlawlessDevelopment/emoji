@@ -10,7 +10,7 @@ else:
 
 def serializedATN():
     return [
-        4,1,4,40,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,1,0,4,0,12,8,0,
+        4,1,3,40,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,1,0,4,0,12,8,0,
         11,0,12,0,13,1,0,1,0,1,1,1,1,3,1,20,8,1,4,1,22,8,1,11,1,12,1,23,
         1,1,3,1,27,8,1,1,2,1,2,3,2,31,8,2,1,3,1,3,1,3,1,4,1,4,1,4,1,4,1,
         4,0,0,5,0,2,4,6,8,0,0,39,0,11,1,0,0,0,2,21,1,0,0,0,4,30,1,0,0,0,
@@ -36,7 +36,7 @@ class SongGrammarParser ( Parser ):
 
     literalNames = [ "<INVALID>", "' '", "'\\n'" ]
 
-    symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "EMOJI", "WS" ]
+    symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "EMOJI" ]
 
     RULE_song = 0
     RULE_phrase = 1
@@ -50,7 +50,6 @@ class SongGrammarParser ( Parser ):
     T__0=1
     T__1=2
     EMOJI=3
-    WS=4
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
