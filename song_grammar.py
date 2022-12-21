@@ -4,7 +4,6 @@ from blender_emoji import load_from_json
 from dist.grammar.SongGrammarLexer import SongGrammarLexer
 from dist.grammar.SongGrammarParser import SongGrammarParser
 from dist.grammar.SongGrammarVisitor import SongGrammarVisitor
-
 json_data = load_from_json("emoji_inverted.json")
 
 
