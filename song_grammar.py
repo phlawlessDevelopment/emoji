@@ -4,8 +4,9 @@ from blender_emoji import load_from_json
 from dist.grammar.SongGrammarLexer import SongGrammarLexer
 from dist.grammar.SongGrammarParser import SongGrammarParser
 from dist.grammar.SongGrammarVisitor import SongGrammarVisitor
-json_data = load_from_json("emoji_inverted.json")
 
+
+json_data = load_from_json("emoji_inverted.json")
 
 class Visitor(SongGrammarVisitor):
 
@@ -16,7 +17,7 @@ class Visitor(SongGrammarVisitor):
             print("     Pair")
             # do something with pair
             for emoji in pair.EMOJI():
-                print(f'            {emoji.getText()} -> {json_data[emoji.getText()][0]}')
+                print(f'            {emoji.getText()} -> {json_data[emoji.getText()][0][0:5]}')
             return pair
 
         # otherwise it's a triplet
@@ -24,7 +25,7 @@ class Visitor(SongGrammarVisitor):
         print("     Triplet")
         # do something with triplet
         for emoji in triplet.EMOJI():
-            print(f'            {emoji.getText()} -> {json_data[emoji.getText()][0]}')
+            print(f'            {emoji.getText()} -> {json_data[emoji.getText()][0][0:5]}')
         return triplet
 
     def visitPhrase(self, ctx):
