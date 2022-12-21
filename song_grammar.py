@@ -14,25 +14,26 @@ class Visitor(SongGrammarVisitor):
         # check if chunk is a pair
         pair = ctx.pair()
         if pair is not None:
-            print("Pair")
+            print("     Pair")
             # do something with pair
-            # for emoji in pair.EMOJI():
-                # print(emoji.getText())
+            for emoji in pair.EMOJI():
+                print(f'            {emoji.getText()}')
             return pair
 
         # otherwise it's a triplet
         triplet = ctx.triplet()
-        print("Triplet")
+        print("     Triplet")
         # do something with triplet
-        # for emoji in triplet.EMOJI():
-            # print(emoji.getText())
+        for emoji in triplet.EMOJI():
+            print(f'            {emoji.getText()}')
         return triplet
 
     def visitPhrase(self, ctx):
-        print("Phrase")
+        print(" Phrase")
         return [self.visitChunk(c) for c in ctx.chunk()]
 
     def visitSong(self, ctx):
+        print("Song")
         return [self.visitPhrase(p) for p in ctx.phrase()]
 
 
