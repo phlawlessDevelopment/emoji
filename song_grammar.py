@@ -16,7 +16,7 @@ class Visitor(SongGrammarVisitor):
             print("     Pair")
             # do something with pair
             for emoji in pair.EMOJI():
-                print(f'            {emoji.getText()}')
+                print(f'            {emoji.getText()} -> {json_data[emoji.getText()][0]}')
             return pair
 
         # otherwise it's a triplet
@@ -24,7 +24,7 @@ class Visitor(SongGrammarVisitor):
         print("     Triplet")
         # do something with triplet
         for emoji in triplet.EMOJI():
-            print(f'            {emoji.getText()}')
+            print(f'            {emoji.getText()} -> {json_data[emoji.getText()][0]}')
         return triplet
 
     def visitPhrase(self, ctx):
